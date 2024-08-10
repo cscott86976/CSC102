@@ -1,0 +1,38 @@
+//Cassidy
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palindrome</title>
+    <script>
+        //function code for Palindrome
+        <!--function code for Palindrome-->
+        function Palindrome (Str){
+            //here we create string
+            const cleanStr=Str.toLowerCase().replace(/[^a-z0-9]/g,'');
+            <!--here is where we return the string-->
+            return cleanStr===cleanStr.split(" ").reverse().join('');
+        }
+        //creating our string
+        <!--the string should come back as Tacocat-->
+        const inputString= "Tacocat"
+        //creating an conditional
+        <!--if and else alert-->
+        if(Palindrome(inputString)){
+            alert(inputString+"This is a Palindrome")
+        } else{
+            alert (inputString+ "This is not a Palindrome")
+        }
+    </script>
+</head>
+<style>
+    body{
+        background-color: aquamarine;
+        color: blueviolet;
+    }
+</style>
+<body>
+
+</body>
+</html>
