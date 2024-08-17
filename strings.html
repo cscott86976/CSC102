@@ -1,38 +1,65 @@
-//Cassidy
+<!--Cassidy-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Palindrome</title>
-    <script>
-        //function code for Palindrome
-        <!--function code for Palindrome-->
-        function Palindrome (Str){
-            //here we create string
-            const cleanStr=Str.toLowerCase().replace(/[^a-z0-9]/g,'');
-            <!--here is where we return the string-->
-            return cleanStr===cleanStr.split(" ").reverse().join('');
-        }
-        //creating our string
-        <!--the string should come back as Tacocat-->
-        const inputString= "Tacocat"
-        //creating an conditional
-        <!--if and else alert-->
-        if(Palindrome(inputString)){
-            alert(inputString+"This is a Palindrome")
-        } else{
-            alert (inputString+ "This is not a Palindrome")
-        }
-    </script>
+   
 </head>
+
 <style>
     body{
         background-color: aquamarine;
         color: blueviolet;
     }
 </style>
-<body>
 
-</body>
+<body>
+      <h1> User First Name and Last Name along with Zip</h1><br/>
+    <p id="conc_names"></p><br/>
+ 
+<label id= "fname_label">Type in first name</label> &nbsp; &nbsp; <input id="input_fname"type="text">
+<label id="lname_label">Type in last name</label> &nbsp; &nbsp; <input id="input_lname"type="text">
+<label id="zip_label">Type in zipcode</label> &nbsp; &nbsp; <input id="input_zip"type="text"style>
+<button id="run_code_btn" onclick="strCheck()">Run strCheck </button>
+<script>
+        //function code for Palindrome
+        // function code for Palindrome
+        function Palindrome (Str){
+            //here we create string
+            const cleanStr=Str.toLowerCase().replace(/[^a-z0-9]/g,'');
+          //  <!--Reverse the String-->
+            return cleanStr===cleanStr.split(" ").reverse().join('');
+        }
+        //creating our string
+      //the String is Tacocat
+        const inputString= "Tacocat"
+        //creating an conditional
+      //  <!--if and else alert-->
+        if(Palindrome(inputString)){
+            alert(inputString+"This is a Palindrome")
+        } else{
+            alert (inputString+ "This is not a Palindrome")
+        }
+        function strCheck(){
+var fname=document.getElementById("input_fname").value;
+        var lname=document.getElementById("input_lname").value;
+        var concName="Hello"+ " " +fname+" "+ lname;
+        document.getElementById("conc_names").innerHTML= concName;
+        if(concName.length>20){
+            alert("String is greater than 20 characters");
+        }else{
+                alert("String is less than 20 characters" + " "+ concname.length);
+            }
+            var zip=document.getElementById ("input_zip").value;
+            if (zip.length==5){
+                alert ("zip is good to go!")
+            }
+            else{
+                alert ("zip is not good to go! Re-enter zipcode!")
+            }  
+        }  
+                </script> 
+                 </body> 
 </html>
