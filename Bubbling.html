@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bubbling example</title>
+</head>
+<body>
+    <div id="grandparent">
+    <div id="parent">
+        <button id="child">Click Me</button>
+    </div>
+    </div>
+    <script>
+        document.getElementById('grandparent').addEventListener('click', function ({
+            alert ("Grandparent is the first item in our document")
+        });
+        document.getElementById('parent').addEventListener('click',function(){
+
+            alert("Parent is the second item in our document")
+        });
+        document.getElementById('child').addEventListener('click',function(){
+            alert("Child was clicked and is a button")
+        });
+        //Stopping event BUbbling
+        //document.getElementById('child').eddEventListener('click',function(event))
+    </script>
+</body>
+</html>

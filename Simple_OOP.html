@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object Oriented Programming Exmaple</title>
+</head>
+<body>
+    <p id=" GetMyJet"> </p>
+    <p id="someAction"></p>
+    <script>
+        //superclass
+        class Airplane {
+            contructor (make , model, colorOfplane){
+                this.make = make;
+                this.model = model;
+                this.colorOfplane;
+            }
+        }
+        //child class
+        class Action extends Airplane {
+            //method
+            accelerate(){
+                document.getElementById("someAction").innerHTML = "About to take off";
+            }
+        }
+        const MyCoolJet = new Airplane ("LearJet","45XR","Red");
+        const someAction = new Action ("Boeing", "Airbus","Blue")
+        document.getElementById("GetMyJet").innerHTML=MyCoolJet.make;
+        document.getElementById("someAction").innerHTML = someAction.colorOfplane;
+    someAction.accelerate();
+    </script>
+</body>
+</html>

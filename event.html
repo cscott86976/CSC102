@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>event Driven Programming Demo</title>
+<!--CSS a dot means a class in CSS-->
+<style>
+    .color.box{
+        width: 400px;
+        height:400px;
+        margin: 20px auto;
+        text-align: center;
+        line-height: 200px;
+        font-size:30px;
+        border: 1px solid green;    
+    }
+    label, input{
+        font-size:30px;
+    }
+</style>
+</head>
+<body>
+    <form id="colorForm" style="text-align:center;">
+    <label>
+        <input type="radio" name="color" value="red"> Red
+        </label>
+        <label>
+            <input type="radio" name="color" value="green">Green
+        </label>
+        <label>
+            <input type="radio" name=" color" value="blue"> Blue
+     </label>
+    </form>
+    <div id="colorBox" class="color-box"> Select a color</div>
+
+<script>
+    //function to change the color of the box
+    function changeColor(event) {
+        const color=event.target.value;
+        document.getElementById('colorBox').style.backgroundcolor = color;
+    }
+    //Add event Listener
+    const radioButton = document.querySelectorAll('input[name="color"]');
+    radioButton.forEach(function(radio) {
+         radio.addEventListener('change', changeColor)};
+    );
+</script>
+</body>
+</html>
