@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Course Intro to OOP</title>
+
+</head>
+<body>
+<h2>CSC 102 Introduction to Programming</h2>
+<p> An example of a JavaScript class.</p>
+<p id="demo"></p>
+
+<script type="text/javascript">
+class softwareEngineer {
+constructor(id, name, yearEmployed, department, speciality) {
+this.id = id;
+this.name = name;
+this.yearEmployed = yearEmployed;
+this.department = department;
+this.speciality = speciality;
+
+}
+}
+
+
+const SE3 = new softwareEngineer("3","Joe SMOE","December 2021","Engineering","C")
+const SE = new softwareEngineer("1","Jane Doe","December 2014","Engineering","javascript"); //Instantiation means new class use the new keyword
+const SE1 = new softwareEngineer("2","Joe Smoe","September 2022","Planes","C-Sharp");
+
+
+
+document.getElementById("demo").innerHTML =
+" The usersname is : " + SE.name + " The Year they were employed is " + SE3.yearEmployed + " This is their department " + SE3.department + " Their ID is : " + SE3.id + "\n";
+
+</script>
+
+</body>
+</html>
