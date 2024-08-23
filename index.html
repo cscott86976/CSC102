@@ -6,23 +6,55 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>CSC 102</title>
 <link rel="stylesheet" href="main.css" />
-</head>
- 
-<body>
-<h1>Hello World!</h1>
-<img src="memeImage.jpg" >
 <style>
-    
-    img{
-      height: 300px;
-      width: 300px 
-    }
+  #container {
+      position: relative;
+      width: 100%;
+      height: 500px;
+      border: 1px solid #000;
+  }
+  #image {
+      position: absolute;
+      width: 100px;
+      height: 100px;
+  }
+  button {
+      margin: 10px;
+  }
 </style>
-<button onclick= ""> Start </button>
-<button onclick=" ">stop  </button>
+</head>
+
+<body>
+<h1>Hello World!</h1> 
+<h2>Open Your Mind!</h2>
+<div id="container">
+  <img id="image" src="memeImage.jpg" alt="Moving Image">
+</div>
+<button onclick="startMoving()">Start</button>
+<button onclick="stopMoving()">Stop</button>
+
+<script>
+  let image = document.getElementById('image');
+  let container = document.getElementById('container');
+  let interval;
+  let position = 0;
+  let direction = 1;
+
+  function startMoving() {
+      interval = setInterval(() => {
+          position += direction * 5;
+          if (position >= container.clientWidth - image.clientWidth || position <= 0) {
+              direction *= -1;
+          }
+          image.style.left = position + 'px';
+      }, 50);
+  }
+
+  function stopMoving() {
+      clearInterval(interval);
+  }
+</script>
  
- 
-  </script>
 </body>
  
 </html>
